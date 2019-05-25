@@ -82,6 +82,14 @@ view: irrometer {
     timeframes: [raw, time, time_of_day, date, week, month, hour, minute10, minute15]
     sql: TIMESTAMPTZ(${TABLE}.timestamp);;
   }
+
+  dimension_group: t1 {
+    type: time
+    timeframes: [raw, date, time, hour,month,week,year]
+    sql: cast(TIMESTAMPTZ(${TABLE}.t1) as timestamp) ;;
+    drill_fields: [t1_hour, t1_time,t1_month,t1_week,t1_year]
+  }
+
   ##dimension_group: timestamp {
   ## type: time
   ##convert_tz: yes
