@@ -1,6 +1,5 @@
 view: irrometer {
-  view_label: "Irrometer"
-  sql_table_name: ctsfieldmousedata ;;
+    sql_table_name: public.ctsfieldmousedata ;;
 
   dimension: a1 {
     group_label: "Analogs"
@@ -77,14 +76,12 @@ view: irrometer {
   }
 
 
-  dimension_group: timestamp {
+    dimension_group: timestamp
+  {
     type: time
-    convert_tz: yes
-    timeframes: [raw, time, time_of_day, hour_of_day,hour, date, week, month]
-    sql: ${TABLE}.timestamp::timestamp;;
-    drill_fields: [timestamp_date, timestamp_hour_of_day,average_value_a3]
+    timeframes: [raw, time, time_of_day, date, week, month, hour, minute10, minute15]
+    sql: TIMESTAMPTZ(${TABLE}.timestamp);;
   }
-
   ##dimension_group: timestamp {
   ## type: time
   ##convert_tz: yes
