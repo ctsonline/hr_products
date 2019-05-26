@@ -86,7 +86,7 @@ view: irrometer {
   dimension_group: t1 {
     type: time
     timeframes: [raw, date, time, hour,month,week,year]
-    sql: cast(TIMESTAMPTZ(${TABLE}.t1) as timestamp) ;;
+    sql: cast(TIMESTAMPTZ(${TABLE}.timestamp) as timestamp) ;;
     drill_fields: [t1_hour, t1_time,t1_month,t1_week,t1_year]
   }
 
