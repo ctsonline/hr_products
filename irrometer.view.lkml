@@ -135,4 +135,18 @@ view: irrometer {
     drill_fields: [timestamp_hour,a4,average_value_a4,timestamp_date,timestamp_raw]
   }
 
+  measure: d1max{
+    label: "DC Ok"
+    type: max
+    sql: ${d1} ;;
+    drill_fields: [timestamp_hour,a2,average_value_a1,a1,timestamp_date,timestamp_raw]
+  }
+
+  measure: r1max {
+    label: "Water valve 1"
+    type: max
+    sql: ${r1}1} ;;
+    drill_fields: [timestamp_hour,a2,average_value_a1,a1,timestamp_date,timestamp_raw]
+  }
+
 }
