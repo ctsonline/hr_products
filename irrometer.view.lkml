@@ -145,7 +145,7 @@ view: irrometer {
   measure: r1max {
     label: "Water valve 1"
     type: max
-    sql: ${r1}1} ;;
+    sql: ${r1}} ;;
     drill_fields: [timestamp_hour,a2,average_value_a1,a1,timestamp_date,timestamp_raw]
   }
 
